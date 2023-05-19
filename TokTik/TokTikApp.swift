@@ -11,7 +11,9 @@ import SwiftUI
 struct TokTikApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBar()
+                .ignoresSafeArea()
+//                .preferredColorScheme(.dark)
         }
     }
 }

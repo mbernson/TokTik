@@ -8,17 +8,55 @@
 
 /* Begin PBXBuildFile section */
 		D5A01A8B2A1796E300970944 /* TokTikApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01A8A2A1796E300970944 /* TokTikApp.swift */; };
-		D5A01A8D2A1796E300970944 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01A8C2A1796E300970944 /* ContentView.swift */; };
 		D5A01A8F2A1796E400970944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A01A8E2A1796E400970944 /* Assets.xcassets */; };
 		D5A01A922A1796E400970944 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A01A912A1796E400970944 /* Preview Assets.xcassets */; };
+		D5A01A992A17973900970944 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01A982A17973900970944 /* TabBar.swift */; };
+		D5A01AA12A179A3A00970944 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AA02A179A3A00970944 /* HomeView.swift */; };
+		D5A01AA62A179A4A00970944 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AA52A179A4A00970944 /* ProfileView.swift */; };
+		D5A01AA82A179A4D00970944 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AA72A179A4D00970944 /* InboxView.swift */; };
+		D5A01AAA2A179A5100970944 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AA92A179A5100970944 /* FriendsView.swift */; };
+		D5A01AAD2A179B0400970944 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AAC2A179B0400970944 /* RecordView.swift */; };
+		D5A01AAF2A179EF700970944 /* FeedPaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AAE2A179EF700970944 /* FeedPaginationView.swift */; };
+		D5A01AB12A179F0500970944 /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AB02A179F0500970944 /* FeedDataSource.swift */; };
+		D5A01AD32A17BAFD00970944 /* FeedPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AD22A17BAFD00970944 /* FeedPageView.swift */; };
+		D5A01AD52A17BBCA00970944 /* FeedPageOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AD42A17BBCA00970944 /* FeedPageOverlay.swift */; };
+		D5A01AD72A17C17800970944 /* SourcePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AD62A17C17800970944 /* SourcePicker.swift */; };
+		D5A01AE12A17CF1A00970944 /* 5euros.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D5A01AD92A17CF1A00970944 /* 5euros.mp4 */; };
+		D5A01AE22A17CF1A00970944 /* FrenchTranslate.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D5A01ADA2A17CF1A00970944 /* FrenchTranslate.mp4 */; };
+		D5A01AE32A17CF1A00970944 /* Storm.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D5A01ADB2A17CF1A00970944 /* Storm.mp4 */; };
+		D5A01AE42A17CF1A00970944 /* Supergaaf.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D5A01ADC2A17CF1A00970944 /* Supergaaf.mp4 */; };
+		D5A01AE52A17CF1A00970944 /* AlienNuke.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D5A01ADD2A17CF1A00970944 /* AlienNuke.mp4 */; };
+		D5A01AE62A17CF1A00970944 /* HackThePlanet.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D5A01ADE2A17CF1A00970944 /* HackThePlanet.mp4 */; };
+		D5A01AE72A17CF1A00970944 /* DuckArmy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D5A01ADF2A17CF1A00970944 /* DuckArmy.mp4 */; };
+		D5A01AE82A17CF1A00970944 /* GemberReveal.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D5A01AE02A17CF1A00970944 /* GemberReveal.mp4 */; };
+		D5A01AEA2A17D7ED00970944 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01AE92A17D7ED00970944 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D5A01A872A1796E300970944 /* TokTik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TokTik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A01A8A2A1796E300970944 /* TokTikApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokTikApp.swift; sourceTree = "<group>"; };
-		D5A01A8C2A1796E300970944 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D5A01A8E2A1796E400970944 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5A01A912A1796E400970944 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D5A01A982A17973900970944 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		D5A01AA02A179A3A00970944 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D5A01AA52A179A4A00970944 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D5A01AA72A179A4D00970944 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		D5A01AA92A179A5100970944 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		D5A01AAC2A179B0400970944 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		D5A01AAE2A179EF700970944 /* FeedPaginationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPaginationView.swift; sourceTree = "<group>"; };
+		D5A01AB02A179F0500970944 /* FeedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataSource.swift; sourceTree = "<group>"; };
+		D5A01AD22A17BAFD00970944 /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
+		D5A01AD42A17BBCA00970944 /* FeedPageOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageOverlay.swift; sourceTree = "<group>"; };
+		D5A01AD62A17C17800970944 /* SourcePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePicker.swift; sourceTree = "<group>"; };
+		D5A01AD92A17CF1A00970944 /* 5euros.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5euros.mp4; sourceTree = "<group>"; };
+		D5A01ADA2A17CF1A00970944 /* FrenchTranslate.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FrenchTranslate.mp4; sourceTree = "<group>"; };
+		D5A01ADB2A17CF1A00970944 /* Storm.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Storm.mp4; sourceTree = "<group>"; };
+		D5A01ADC2A17CF1A00970944 /* Supergaaf.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Supergaaf.mp4; sourceTree = "<group>"; };
+		D5A01ADD2A17CF1A00970944 /* AlienNuke.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlienNuke.mp4; sourceTree = "<group>"; };
+		D5A01ADE2A17CF1A00970944 /* HackThePlanet.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = HackThePlanet.mp4; sourceTree = "<group>"; };
+		D5A01ADF2A17CF1A00970944 /* DuckArmy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DuckArmy.mp4; sourceTree = "<group>"; };
+		D5A01AE02A17CF1A00970944 /* GemberReveal.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = GemberReveal.mp4; sourceTree = "<group>"; };
+		D5A01AE92A17D7ED00970944 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +76,9 @@
 				D5A01A892A1796E300970944 /* TokTik */,
 				D5A01A882A1796E300970944 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		D5A01A882A1796E300970944 /* Products */ = {
 			isa = PBXGroup;
@@ -51,8 +91,14 @@
 		D5A01A892A1796E300970944 /* TokTik */ = {
 			isa = PBXGroup;
 			children = (
+				D5A01AD82A17CE4800970944 /* Videos */,
+				D5A01A9F2A179A3500970944 /* Home */,
+				D5A01AAB2A179AFF00970944 /* Record */,
+				D5A01AA42A179A4600970944 /* Profile */,
+				D5A01AA32A179A4300970944 /* Inbox */,
+				D5A01AA22A179A3D00970944 /* Friends */,
 				D5A01A8A2A1796E300970944 /* TokTikApp.swift */,
-				D5A01A8C2A1796E300970944 /* ContentView.swift */,
+				D5A01A982A17973900970944 /* TabBar.swift */,
 				D5A01A8E2A1796E400970944 /* Assets.xcassets */,
 				D5A01A902A1796E400970944 /* Preview Content */,
 			);
@@ -65,6 +111,67 @@
 				D5A01A912A1796E400970944 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D5A01A9F2A179A3500970944 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D5A01AA02A179A3A00970944 /* HomeView.swift */,
+				D5A01AD62A17C17800970944 /* SourcePicker.swift */,
+				D5A01AB02A179F0500970944 /* FeedDataSource.swift */,
+				D5A01AAE2A179EF700970944 /* FeedPaginationView.swift */,
+				D5A01AD22A17BAFD00970944 /* FeedPageView.swift */,
+				D5A01AE92A17D7ED00970944 /* PlayerView.swift */,
+				D5A01AD42A17BBCA00970944 /* FeedPageOverlay.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D5A01AA22A179A3D00970944 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				D5A01AA92A179A5100970944 /* FriendsView.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		D5A01AA32A179A4300970944 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				D5A01AA72A179A4D00970944 /* InboxView.swift */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
+		D5A01AA42A179A4600970944 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D5A01AA52A179A4A00970944 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D5A01AAB2A179AFF00970944 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				D5A01AAC2A179B0400970944 /* RecordView.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		D5A01AD82A17CE4800970944 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				D5A01AD92A17CF1A00970944 /* 5euros.mp4 */,
+				D5A01ADD2A17CF1A00970944 /* AlienNuke.mp4 */,
+				D5A01ADF2A17CF1A00970944 /* DuckArmy.mp4 */,
+				D5A01ADA2A17CF1A00970944 /* FrenchTranslate.mp4 */,
+				D5A01AE02A17CF1A00970944 /* GemberReveal.mp4 */,
+				D5A01ADE2A17CF1A00970944 /* HackThePlanet.mp4 */,
+				D5A01ADB2A17CF1A00970944 /* Storm.mp4 */,
+				D5A01ADC2A17CF1A00970944 /* Supergaaf.mp4 */,
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +233,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5A01A922A1796E400970944 /* Preview Assets.xcassets in Resources */,
+				D5A01AE72A17CF1A00970944 /* DuckArmy.mp4 in Resources */,
+				D5A01AE52A17CF1A00970944 /* AlienNuke.mp4 in Resources */,
+				D5A01AE32A17CF1A00970944 /* Storm.mp4 in Resources */,
 				D5A01A8F2A1796E400970944 /* Assets.xcassets in Resources */,
+				D5A01AE62A17CF1A00970944 /* HackThePlanet.mp4 in Resources */,
+				D5A01AE82A17CF1A00970944 /* GemberReveal.mp4 in Resources */,
+				D5A01AE22A17CF1A00970944 /* FrenchTranslate.mp4 in Resources */,
+				D5A01AE12A17CF1A00970944 /* 5euros.mp4 in Resources */,
+				D5A01AE42A17CF1A00970944 /* Supergaaf.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +252,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5A01A8D2A1796E300970944 /* ContentView.swift in Sources */,
+				D5A01AD72A17C17800970944 /* SourcePicker.swift in Sources */,
+				D5A01AB12A179F0500970944 /* FeedDataSource.swift in Sources */,
+				D5A01AAA2A179A5100970944 /* FriendsView.swift in Sources */,
+				D5A01A992A17973900970944 /* TabBar.swift in Sources */,
+				D5A01AA82A179A4D00970944 /* InboxView.swift in Sources */,
+				D5A01AA12A179A3A00970944 /* HomeView.swift in Sources */,
+				D5A01AA62A179A4A00970944 /* ProfileView.swift in Sources */,
+				D5A01AEA2A17D7ED00970944 /* PlayerView.swift in Sources */,
+				D5A01AAD2A179B0400970944 /* RecordView.swift in Sources */,
+				D5A01AAF2A179EF700970944 /* FeedPaginationView.swift in Sources */,
+				D5A01AD52A17BBCA00970944 /* FeedPageOverlay.swift in Sources */,
 				D5A01A8B2A1796E300970944 /* TokTikApp.swift in Sources */,
+				D5A01AD32A17BAFD00970944 /* FeedPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
