@@ -17,15 +17,18 @@ struct InboxView: View {
     var body: some View {
         NavigationStack {
             List {
-                Text("Hello, World!")
+                Text("Inbox goes here")
             }
             .navigationTitle("Inbox")
         }
     }
 }
 
+import Combine
+
 class InboxViewController: UIHostingController<InboxView> {
     let viewModel: InboxViewModel
+    private var disposeBag = Set<AnyCancellable>()
 
     init() {
         let viewModel = InboxViewModel()
@@ -43,6 +46,7 @@ class InboxViewController: UIHostingController<InboxView> {
         viewModel.$unreadBadgeCount
             .map(String.init)
             .assign(to: \.badgeValue, on: tabBarItem)
+            .store(in: &disposeBag)
     }
 }
 struct InboxView_Previews: PreviewProvider {

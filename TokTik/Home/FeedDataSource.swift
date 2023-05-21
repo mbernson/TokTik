@@ -98,38 +98,20 @@ protocol FeedDataSource {
 
 class FollowingFeedDataSource: FeedDataSource {
     func nextItem() -> FeedItem? {
-        return nil
+        return FeedItem(
+            id: 8,
+                 description: "Gaaf land wonen wij toch in",
+                 date: .now,
+            videoURL: Bundle.main.url(forResource: "Supergaaf", withExtension: "mp4"),
+            user: .henk
+        )
     }
 }
-
-private let colors: [Color] = [
-    Color.red,
-    Color.orange,
-    Color.yellow,
-    Color.green,
-    Color.mint,
-    Color.teal,
-    Color.cyan,
-    Color.blue,
-    Color.indigo,
-    Color.purple,
-    Color.pink,
-    Color.brown,
-    Color.white,
-    Color.gray,
-    Color.black,
-    Color.clear,
-    Color.primary,
-    Color.secondary,
-]
 
 class ForYouFeedDataSource: FeedDataSource {
     var items: [FeedItem] = []
 
     init() {
-//        self.items = colors.enumerated().map { i, color in
-//            FeedItem(id: i, color: color)
-//        }
         self.items = FeedItem.examples.shuffled()
     }
 
@@ -143,7 +125,7 @@ class PreviewFeedDataSource: FeedDataSource {
     var items: [FeedItem] = []
 
     init() {
-        self.items = [.example]
+        self.items = FeedItem.examples
     }
 
     func nextItem() -> FeedItem? {

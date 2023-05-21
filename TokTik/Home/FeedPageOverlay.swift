@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FeedPageOverlay: View {
     let feedItem: FeedItem
+    @State var isFollowing = false
 
     var body: some View {
         HStack(alignment: .bottom, spacing: 10) {
@@ -26,54 +27,37 @@ struct FeedPageOverlay: View {
             Spacer()
 
             VStack(spacing: 20) {
-                ProfileButton()
+                ProfileButton(isFollowing: $isFollowing) {
+                    print("Follow")
+                }
                 
-                NumberIconButton(icon: "heart.fill", number: 44_300)
-                NumberIconButton(icon: "ellipsis.bubble.fill", number: 339)
-                NumberIconButton(icon: "bookmark.fill", number: 3918)
-                NumberIconButton(icon: "arrowshape.turn.up.forward.fill", number: 9219)
+                Button("Like") {
+                    print("Like")
+                }.buttonStyle(NumberIconButtonStyle(icon: "heart.fill", number: 44_300))
+                Button("Comments") {
+                    print("Comments")
+                }.buttonStyle(NumberIconButtonStyle(icon: "ellipsis.bubble.fill", number: 339))
+                Button("Bookmark") {
+                    print("Bookmark")
+                }.buttonStyle(NumberIconButtonStyle(icon: "bookmark.fill", number: 3918))
+                Button("Reply") {
+                    print("Reply")
+                }.buttonStyle(NumberIconButtonStyle(icon: "arrowshape.turn.up.forward.fill", number: 9219))
             }
         }
     }
 }
 
-private struct ProfileButton: View {
-    var body: some View {
-        Button(action: {}, label: {
-            Image("mathijs")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 54, height: 54)
-                .clipShape(Circle())
-                .overlay(alignment: .bottom) {
-                    Image(systemName: "plus")
-                        .font(.body.bold())
-                        .foregroundColor(.white)
-                        .padding(4)
-                        .frame(width: 24, height: 24)
-                        .background(.red)
-                        .clipShape(Circle())
-                        .offset(y: 12)
-                }
-        })
-        .padding(.bottom, 12)
-    }
-}
-
-private struct NumberIconButton: View {
+private struct NumberIconButtonStyle: ButtonStyle {
     let icon: String
     let number: Int
-    var body: some View {
-        Button(action: {
-            print("TODO")
-        }, label: {
-            VStack {
-                Image(systemName: icon)
-                    .font(.largeTitle)
-                Text(number, format: .number)
-                    .font(.headline)
-            }
-        })
+    func makeBody(configuration: Configuration) -> some View {
+        VStack {
+            Image(systemName: icon)
+                .font(.largeTitle)
+            Text(number, format: .number)
+                .font(.headline)
+        }.opacity(configuration.isPressed ? 0.5 : 1.0)
     }
 }
 
@@ -83,5 +67,7 @@ struct FeedPageOverlay_Previews: PreviewProvider {
         FeedPageOverlay(feedItem: .example)
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .background(.black)
+            .foregroundColor(.white)
     }
 }

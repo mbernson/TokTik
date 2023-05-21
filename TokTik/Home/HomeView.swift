@@ -8,10 +8,28 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    let dataSource: FeedDataSource
+    var dataSource: FeedDataSource
+
+    @Published var selectedSource: FeedSource = .forYou {
+        didSet {
+            dataSource = dataSource(for: selectedSource)
+            objectWillChange.send()
+        }
+    }
 
     init() {
         self.dataSource = ForYouFeedDataSource()
+    }
+
+    func dataSource(for feedSource: FeedSource) -> FeedDataSource {
+        switch feedSource {
+        case .following:
+            return FollowingFeedDataSource()
+        case .forYou:
+            return ForYouFeedDataSource()
+        default:
+            fatalError()
+        }
     }
 }
 
@@ -20,14 +38,14 @@ struct HomeView: View {
 
     var body: some View {
         FeedPaginationView(dataSource: viewModel.dataSource)
-            .ignoresSafeArea()
+            .ignoresSafeArea(edges: .top)
             .overlay(alignment: .top) {
                 HStack {
                     Button(action: {}, label: {
                         Image(systemName: "play.tv")
                     })
                     Spacer()
-                    SourcePicker()
+                    SourcePicker(selectedSource: $viewModel.selectedSource)
                     Spacer()
                     Button(action: {}, label: {
                         Image(systemName: "magnifyingglass")
@@ -40,10 +58,11 @@ struct HomeView: View {
     }
 }
 
-struct FeedSource: Identifiable {
+struct FeedSource: Identifiable, Equatable {
     let id: Int
     let title: String
     let hasDot: Bool
+
     static let following = FeedSource(id: 1, title: "Volgend", hasDot: true)
     static let forYou = FeedSource(id: 2, title: "Voor jou", hasDot: false)
 }

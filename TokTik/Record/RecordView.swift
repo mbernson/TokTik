@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecordView: View {
     var body: some View {
-        Text("Hello, World!")
+        Text("Recording UI goes here")
     }
 }
 

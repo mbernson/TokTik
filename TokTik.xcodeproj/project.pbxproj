@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D57902A42A180E2400E60F94 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57902A32A180E2400E60F94 /* ProfileButton.swift */; };
 		D5A01A8B2A1796E300970944 /* TokTikApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A01A8A2A1796E300970944 /* TokTikApp.swift */; };
 		D5A01A8F2A1796E400970944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A01A8E2A1796E400970944 /* Assets.xcassets */; };
 		D5A01A922A1796E400970944 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A01A912A1796E400970944 /* Preview Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D57902A32A180E2400E60F94 /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		D5A01A872A1796E300970944 /* TokTik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TokTik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A01A8A2A1796E300970944 /* TokTikApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokTikApp.swift; sourceTree = "<group>"; };
 		D5A01A8E2A1796E400970944 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				D5A01AD22A17BAFD00970944 /* FeedPageView.swift */,
 				D5A01AE92A17D7ED00970944 /* PlayerView.swift */,
 				D5A01AD42A17BBCA00970944 /* FeedPageOverlay.swift */,
+				D57902A32A180E2400E60F94 /* ProfileButton.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				D5A01AD72A17C17800970944 /* SourcePicker.swift in Sources */,
 				D5A01AB12A179F0500970944 /* FeedDataSource.swift in Sources */,
 				D5A01AAA2A179A5100970944 /* FriendsView.swift in Sources */,
+				D57902A42A180E2400E60F94 /* ProfileButton.swift in Sources */,
 				D5A01A992A17973900970944 /* TabBar.swift in Sources */,
 				D5A01AA82A179A4D00970944 /* InboxView.swift in Sources */,
 				D5A01AA12A179A3A00970944 /* HomeView.swift in Sources */,

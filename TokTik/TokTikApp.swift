@@ -13,7 +13,6 @@ struct TokTikApp: App {
         WindowGroup {
             TabBar()
                 .ignoresSafeArea()
-//                .preferredColorScheme(.dark)
         }
     }
 }

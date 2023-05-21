@@ -20,12 +20,19 @@ struct FeedPageView: View {
             PlayerView(player: viewModel.player, videoGravity: .resizeAspectFill)
                 .ignoresSafeArea(.all, edges: .top)
                 .onTapGesture {
-                    if viewModel.player?.timeControlStatus == .playing {
-                        viewModel.player?.pause()
+                    if viewModel.isPaused {
+                        viewModel.play()
                     } else {
-                        viewModel.player?.play()
+                        viewModel.pause()
                     }
                 }
+
+            if viewModel.isPaused {
+                Image(systemName: "play.fill")
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
+                    .opacity(0.7)
+            }
 
             FeedPageOverlay(feedItem: viewModel.feedItem)
                 .padding()
@@ -72,16 +79,52 @@ class FeedPageController: UIHostingController<FeedPageView> {
     }
 }
 
-class FeedPageViewModel: ObservableObject {
+import Combine
+
+@MainActor class FeedPageViewModel: ObservableObject {
     let feedItem: FeedItem
-    @Published var isDimmed = false
     let player: AVPlayer?
+
+    @Published var isDimmed = false
+    @Published var status: PlaybackStatus = .pending
+
+    var isPaused: Bool { status == .paused }
+
+    private var disposeBag = Set<AnyCancellable>()
+
+    enum PlaybackStatus: String {
+        case pending
+        case playing
+        case paused
+    }
 
     init(feedItem: FeedItem) {
         self.feedItem = feedItem
         self.player = feedItem.videoURL.map { url in
             AVPlayer(url: url)
         }
+
+        player?.publisher(for: \.timeControlStatus)
+            .compactMap(convertTimeControlStatus)
+            .assign(to: \.status, on: self)
+            .store(in: &disposeBag)
+    }
+
+    private func convertTimeControlStatus(_ status: AVPlayer.TimeControlStatus) -> PlaybackStatus? {
+        switch status {
+        case .paused: return .paused
+        case .playing: return .playing
+        case .waitingToPlayAtSpecifiedRate: return .pending
+        @unknown default: return nil
+        }
+    }
+
+    func pause() {
+        player?.pause()
+    }
+
+    func play() {
+        player?.play()
     }
 
     func willTransition() {
@@ -118,5 +161,6 @@ class FeedPageViewModel: ObservableObject {
 struct FeedPageView_Previews: PreviewProvider {
     static var previews: some View {
         FeedPageView(viewModel: FeedPageViewModel(feedItem: .example))
+            .foregroundColor(.white)
     }
 }

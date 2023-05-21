@@ -19,7 +19,8 @@ struct FeedPaginationView: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ controller: UIPageViewController, context: Context) {
-        // TODO
+        context.coordinator.dataSource = dataSource
+        context.coordinator.setInitialViewController(controller, animated: false)
     }
 
     func makeCoordinator() -> Coordinator {
@@ -27,7 +28,7 @@ struct FeedPaginationView: UIViewControllerRepresentable {
     }
 
     class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-        private let dataSource: FeedDataSource
+        var dataSource: FeedDataSource
         private var data: [FeedItem] = []
 
         init(dataSource: FeedDataSource) {
@@ -46,6 +47,7 @@ struct FeedPaginationView: UIViewControllerRepresentable {
         }
 
         func setInitialViewController(_ pageViewController: UIPageViewController, animated: Bool) {
+            data.removeAll()
             guard let initialFeedItem = nextItem() else { return }
             let viewController = makeViewController(for: initialFeedItem)
             pageViewController.setViewControllers([viewController], direction: .forward, animated: animated)
@@ -103,7 +105,15 @@ struct FeedPaginationView: UIViewControllerRepresentable {
 
 struct FeedPaginationView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedPaginationView(dataSource: PreviewFeedDataSource())
-            .ignoresSafeArea()
+        TabView {
+            FeedPaginationView(dataSource: PreviewFeedDataSource())
+                .ignoresSafeArea(edges: .top)
+                .foregroundColor(.white)
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Feed")
+                }
+        }
+        .preferredColorScheme(.dark)
     }
 }

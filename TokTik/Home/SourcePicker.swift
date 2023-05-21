@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SourcePicker: View {
     let sources: [FeedSource] = [.following, .forYou]
-    @State var selectedSource: FeedSource = .forYou
+    @Binding var selectedSource: FeedSource
     @Namespace private var animation
 
     var body: some View {
@@ -44,8 +44,9 @@ struct SourcePicker: View {
     }
 }
 struct SourcePicker_Previews: PreviewProvider {
+    @State static var selectedSource: FeedSource = .forYou
     static var previews: some View {
-        SourcePicker()
+        SourcePicker(selectedSource: $selectedSource)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.black)
     }
