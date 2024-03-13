@@ -106,16 +106,17 @@ import Combine
 
         player?.publisher(for: \.timeControlStatus)
             .compactMap(convertTimeControlStatus)
+            .receive(on: RunLoop.main)
             .assign(to: \.status, on: self)
             .store(in: &disposeBag)
     }
 
     private func convertTimeControlStatus(_ status: AVPlayer.TimeControlStatus) -> PlaybackStatus? {
         switch status {
-        case .paused: return .paused
-        case .playing: return .playing
-        case .waitingToPlayAtSpecifiedRate: return .pending
-        @unknown default: return nil
+        case .paused: .paused
+        case .playing: .playing
+        case .waitingToPlayAtSpecifiedRate: .pending
+        @unknown default: nil
         }
     }
 
@@ -143,9 +144,11 @@ import Combine
     }
 
     func viewWillAppear(_ animated: Bool) {
+        // Empty for now
     }
 
     func viewDidAppear(_ animated: Bool) {
+        // Empty for now
     }
 
     func viewWillDisappear(_ animated: Bool) {

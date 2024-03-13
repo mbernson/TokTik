@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import os.log
 
 struct FeedPaginationView: UIViewControllerRepresentable {
     let dataSource: FeedDataSource
@@ -30,6 +31,7 @@ struct FeedPaginationView: UIViewControllerRepresentable {
     class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
         var dataSource: FeedDataSource
         private var data: [FeedItem] = []
+        private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "FeedPaginationViewCoordinator")
 
         init(dataSource: FeedDataSource) {
             self.dataSource = dataSource
@@ -81,21 +83,22 @@ struct FeedPaginationView: UIViewControllerRepresentable {
         }
 
         func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-            guard let currentController =  pageViewController.viewControllers?.first as? FeedPageController,
-                  let nextController = pendingViewControllers.first as? FeedPageController else { return }
-//            print("Will transition to \(nextController.feedItem)")
-            currentController.viewModel.willTransition()
+            guard let currentViewController = pageViewController.viewControllers?.first as? FeedPageController,
+                  let nextViewController = pendingViewControllers.first as? FeedPageController
+            else { return }
+            logger.debug("Will transition to feed item \(nextViewController.feedItem.id)")
+            currentViewController.viewModel.willTransition()
         }
 
         func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
             // Use the completed parameter to distinguish between a transition that completed (the page was turned) and a transition that the user aborted (the page was not turned).
-            guard let nextController = pageViewController.viewControllers?.first as? FeedPageController,
+            guard let nextViewController = pageViewController.viewControllers?.first as? FeedPageController,
                   let previousViewController = previousViewControllers.first as? FeedPageController
             else { return }
-            nextController.viewModel.didTransition(completed: completed)
+            nextViewController.viewModel.didTransition(completed: completed)
             if completed {
-//                print("Stop playing \(previousViewController.feedItem)")
-//                print("Start playing \(nextController.feedItem)")
+                logger.debug("Stop playing feed item \(previousViewController.feedItem.id)")
+                logger.debug("Start playing feed item \(nextViewController.feedItem.id)")
             } else {
                 // Do nothing
             }
