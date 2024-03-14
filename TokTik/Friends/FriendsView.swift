@@ -28,8 +28,6 @@ class FriendsViewController: UIHostingController<FriendsView> {
     }
 }
 
-struct FriendsView_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendsView()
-    }
+#Preview {
+    FriendsView()
 }

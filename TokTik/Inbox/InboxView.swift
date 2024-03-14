@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 class InboxViewModel: ObservableObject {
     @Published var unreadBadgeCount: Int = 7
@@ -23,8 +24,6 @@ struct InboxView: View {
         }
     }
 }
-
-import Combine
 
 class InboxViewController: UIHostingController<InboxView> {
     let viewModel: InboxViewModel
@@ -49,8 +48,7 @@ class InboxViewController: UIHostingController<InboxView> {
             .store(in: &disposeBag)
     }
 }
-struct InboxView_Previews: PreviewProvider {
-    static var previews: some View {
-        InboxView(viewModel: InboxViewModel())
-    }
+
+#Preview {
+    InboxView(viewModel: InboxViewModel())
 }

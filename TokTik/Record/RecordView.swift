@@ -29,8 +29,6 @@ class RecordViewController: UIHostingController<RecordView> {
     }
 }
 
-struct RecordView_Previews: PreviewProvider {
-    static var previews: some View {
-        RecordView()
-    }
+#Preview {
+    RecordView()
 }

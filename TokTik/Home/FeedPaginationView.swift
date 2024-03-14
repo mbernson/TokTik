@@ -106,17 +106,15 @@ struct FeedPaginationView: UIViewControllerRepresentable {
     }
 }
 
-struct FeedPaginationView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabView {
-            FeedPaginationView(dataSource: PreviewFeedDataSource())
-                .ignoresSafeArea(edges: .top)
-                .foregroundColor(.white)
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Feed")
-                }
-        }
-        .preferredColorScheme(.dark)
+#Preview {
+    TabView {
+        FeedPaginationView(dataSource: PreviewFeedDataSource())
+            .ignoresSafeArea(edges: .top)
+            .foregroundColor(.white)
+            .tabItem {
+                Image(systemName: "house.fill")
+                Text("Feed")
+            }
     }
+    .preferredColorScheme(.dark)
 }

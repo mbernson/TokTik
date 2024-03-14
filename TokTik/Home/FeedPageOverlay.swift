@@ -61,13 +61,10 @@ private struct NumberIconButtonStyle: ButtonStyle {
     }
 }
 
-
-struct FeedPageOverlay_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedPageOverlay(feedItem: .example)
-            .padding()
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            .background(.black)
-            .foregroundColor(.white)
-    }
+#Preview {
+    FeedPageOverlay(feedItem: .example)
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .background(.gray)
+        .foregroundColor(.white)
 }

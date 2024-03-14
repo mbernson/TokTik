@@ -41,9 +41,7 @@ class PlayerUIView: UIView {
     }
 }
 
-struct PlayerView_Previews: PreviewProvider {
-    static let player = AVPlayer(url: URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!)
-    static var previews: some View {
-        PlayerView(player: player, videoGravity: .resizeAspectFill)
-    }
+#Preview {
+    let player = AVPlayer(url: URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!)
+    return PlayerView(player: player, videoGravity: .resizeAspectFill)
 }

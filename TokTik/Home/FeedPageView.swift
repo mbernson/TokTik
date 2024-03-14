@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVKit
+import Combine
 
 // This is a single page
 
@@ -41,7 +42,6 @@ struct FeedPageView: View {
         }
     }
 }
-
 
 class FeedPageController: UIHostingController<FeedPageView> {
     let viewModel: FeedPageViewModel
@@ -78,8 +78,6 @@ class FeedPageController: UIHostingController<FeedPageView> {
         viewModel.viewDidDisappear(animated)
     }
 }
-
-import Combine
 
 @MainActor class FeedPageViewModel: ObservableObject {
     let feedItem: FeedItem
@@ -152,7 +150,6 @@ import Combine
     }
 
     func viewWillDisappear(_ animated: Bool) {
-        print("Pausing \(String(describing: feedItem.videoURL?.lastPathComponent))")
         player?.pause()
     }
 
@@ -161,9 +158,7 @@ import Combine
     }
 }
 
-struct FeedPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedPageView(viewModel: FeedPageViewModel(feedItem: .example))
-            .foregroundColor(.white)
-    }
+#Preview {
+    FeedPageView(viewModel: FeedPageViewModel(feedItem: .example))
+        .foregroundColor(.white)
 }

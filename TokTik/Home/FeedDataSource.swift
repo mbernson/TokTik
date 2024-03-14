@@ -15,11 +15,11 @@ struct Profile: Identifiable {
     let isVerified: Bool
 
     static let henk = Profile(id: 1, name: "Henk",
-                                 picture: Bundle.main.url(forResource: "henk", withExtension: "jpg"),
-                                isVerified: false)
+                              picture: Bundle.main.url(forResource: "henk", withExtension: "jpg"),
+                              isVerified: false)
     static let vice = Profile(id: 2, name: "Motherboard",
-                                 picture: Bundle.main.url(forResource: "motherboard", withExtension: "jpg"),
-                                isVerified: true)
+                              picture: Bundle.main.url(forResource: "motherboard", withExtension: "jpg"),
+                              isVerified: true)
 }
 
 struct FeedItem: Identifiable {
@@ -31,61 +31,61 @@ struct FeedItem: Identifiable {
 
     static let example = FeedItem(id: 1, description: "Duck Army",
                                   date: .now, videoURL: Bundle.main.url(forResource: "DuckArmy", withExtension: "mp4"),
-                                                       user: .henk)
+                                  user: .henk)
     static let examples: [FeedItem] = [
         FeedItem(
             id: 1,
-                 description: "5 euro, op je muil gauw",
-                 date: .now,
+            description: "5 euro, op je muil gauw",
+            date: .now,
             videoURL: Bundle.main.url(forResource: "5euros", withExtension: "mp4"),
             user: .henk
         ),
         FeedItem(
             id: 2,
-                 description: "Duck Army",
-                 date: .now,
+            description: "Duck Army",
+            date: .now,
             videoURL: Bundle.main.url(forResource: "DuckArmy", withExtension: "mp4"),
             user: .henk
         ),
         FeedItem(
             id: 3,
-                 description: "Nuke the entire site from orbit",
-                 date: .now,
+            description: "Nuke the entire site from orbit",
+            date: .now,
             videoURL: Bundle.main.url(forResource: "AlienNuke", withExtension: "mp4"),
             user: .henk
         ),
         FeedItem(
             id: 4,
-                 description: "Google Translate naar het Frans",
-                 date: .now,
+            description: "Google Translate naar het Frans",
+            date: .now,
             videoURL: Bundle.main.url(forResource: "FrenchTranslate", withExtension: "mp4"),
             user: .henk
         ),
         FeedItem(
             id: 5,
-                 description: "Gember reveal party",
-                 date: .now,
+            description: "Gember reveal party",
+            date: .now,
             videoURL: Bundle.main.url(forResource: "GemberReveal", withExtension: "mp4"),
             user: .henk
         ),
         FeedItem(
             id: 6,
-                 description: "Hack the planet!!1!",
-                 date: .now,
+            description: "Hack the planet!!1!",
+            date: .now,
             videoURL: Bundle.main.url(forResource: "HackThePlanet", withExtension: "mp4"),
             user: .henk
         ),
         FeedItem(
             id: 7,
-                 description: "Er was een grote storm in Nederland",
-                 date: .now,
+            description: "Er was een grote storm in Nederland",
+            date: .now,
             videoURL: Bundle.main.url(forResource: "Storm", withExtension: "mp4"),
             user: .henk
         ),
         FeedItem(
             id: 8,
-                 description: "Gaaf land wonen wij toch in",
-                 date: .now,
+            description: "Gaaf land wonen wij toch in",
+            date: .now,
             videoURL: Bundle.main.url(forResource: "Supergaaf", withExtension: "mp4"),
             user: .henk
         ),
@@ -100,8 +100,8 @@ class FollowingFeedDataSource: FeedDataSource {
     func nextItem() -> FeedItem? {
         return FeedItem(
             id: 8,
-                 description: "Gaaf land wonen wij toch in",
-                 date: .now,
+            description: "Gaaf land wonen wij toch in",
+            date: .now,
             videoURL: Bundle.main.url(forResource: "Supergaaf", withExtension: "mp4"),
             user: .henk
         )

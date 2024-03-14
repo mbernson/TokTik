@@ -72,7 +72,7 @@ struct TabBar: UIViewControllerRepresentable {
 
         func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
             guard let tab = tabs.first(where: { $0.id == viewController.tabBarItem.tag }) else { return }
-            print("Switched tab to \(String(describing: tab.title))")
+            print("Switched tab to \(tab.title ?? "untitled tab")")
         }
     }
 }
@@ -80,7 +80,6 @@ struct TabBar: UIViewControllerRepresentable {
 class TabBarController: UITabBarController {
     init() {
         super.init(nibName: nil, bundle: nil)
-//        overrideUserInterfaceStyle = .dark
     }
 
     required init?(coder: NSCoder) {
@@ -94,9 +93,7 @@ class TabBarController: UITabBarController {
     }
 }
 
-struct TabBar_Previews: PreviewProvider {
-    static var previews: some View {
-        TabBar()
-            .ignoresSafeArea()
-    }
+#Preview {
+    TabBar()
+        .ignoresSafeArea()
 }

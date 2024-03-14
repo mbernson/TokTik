@@ -10,6 +10,8 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     var dataSource: FeedDataSource
 
+    let sources: [FeedSource] = [.following, .forYou]
+
     @Published var selectedSource: FeedSource = .forYou {
         didSet {
             dataSource = dataSource(for: selectedSource)
@@ -45,7 +47,7 @@ struct HomeView: View {
                         Image(systemName: "play.tv")
                     })
                     Spacer()
-                    SourcePicker(selectedSource: $viewModel.selectedSource)
+                    SourcePicker(sources: viewModel.sources, selectedSource: $viewModel.selectedSource)
                     Spacer()
                     Button(action: {}, label: {
                         Image(systemName: "magnifyingglass")
@@ -81,8 +83,6 @@ class HomeViewController: UIHostingController<HomeView> {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+#Preview {
+    HomeView()
 }

@@ -66,13 +66,17 @@ struct Plus: Shape {
     }
 }
 
-struct ProfileButton_Previews: PreviewProvider {
-    @State static var isFollowing = false
-    static var previews: some View {
+struct ProfileButton_Preview: View {
+    @State var isFollowing = false
+    var body: some View {
 //        Checkmark()
 //            .stroke(.black, style: StrokeStyle(lineWidth: 10, lineCap: .round))
 //            .frame(width: 100, height: 100)
 
-        ProfileButton(isFollowing: $isFollowing, action: {})
+        ProfileButton(isFollowing: $isFollowing) { print("Following: \(isFollowing)") }
     }
+}
+
+#Preview {
+    ProfileButton_Preview()
 }
